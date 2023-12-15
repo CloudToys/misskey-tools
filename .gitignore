@@ -5,3 +5,4 @@ config.json
 .yarn
 .env
 .turbo
+.DS_Store

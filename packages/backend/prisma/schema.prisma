@@ -10,20 +10,18 @@ datasource db {
 /// Misskey Tools アカウント
 model Account {
   /// ID
-  id          String  @id @default(uuid())
+  id              String           @id @default(uuid())
   /// このアカウントの名前。デフォルトでは @Lutica@mk.shrimpia.network みたいな感じになる
-  name        String  @db.VarChar
+  name            String           @db.VarChar
   /// Misskey Tools API アクセストークン
-  accessToken String  @unique @map("access_token") @db.VarChar
+  accessToken     String           @unique @map("access_token") @db.VarChar
   /// ログイン用Eメールアドレス
   /// 今後メールによる緊急ログインを実装するとき用
-  email       String? @db.VarChar
+  email           String?          @db.VarChar
   /// ログイン用の一時的なパスワード
-  password    String? @db.VarChar
+  password        String?          @db.VarChar
   /// 管理者かどうか
-  isAdmin     Boolean @default(false) @map("is_admin")
-
-  /// このアカウントに紐付いたMisskeyセッションの一覧
+  isAdmin         Boolean          @default(false) @map("is_admin")
   misskeySessions MisskeySession[]
 
   @@map("account")
@@ -32,24 +30,20 @@ model Account {
 /// Tools アカウントに紐づくMisskeyとの連携情報。
 model MisskeySession {
   /// ID
-  id           String @id @default(uuid())
+  id            String          @id @default(uuid())
   /// ユーザー名
-  username     String @db.VarChar
+  username      String          @db.VarChar
   /// ホスト名
-  host         String @db.VarChar
+  host          String          @db.VarChar
   /// Misskey APIトークン
-  token        String @db.VarChar
+  token         String          @db.VarChar
   /// Misskey APIトークンのバージョン。
-  tokenVersion Int
-
+  tokenVersion  Int
   /// Tools アカウントID
-  accountId String  @db.VarChar()
-  /// Tools アカウント
-  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
-
-  /// ミス廃アラート機能のアカウント
-  holicAccount HolicAccount?
-  scheduledNote  ScheduledNote[]
+  accountId     String          @db.VarChar
+  holicAccount  HolicAccount?
+  account       Account         @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  scheduledNote ScheduledNote[]
 
   @@unique([username, host])
   @@map("misskey_session")
@@ -58,27 +52,23 @@ model MisskeySession {
 /// ミス廃アラート アカウント
 model HolicAccount {
   /// このアカウントに紐づくMisskeyセッションのID
-  misskeySessionId String         @id @map("misskey_session_id")
-  /// このアカウントに紐づくMisskeyセッション
-  misskeySession   MisskeySession @relation(fields: [misskeySessionId], references: [id], onDelete: Cascade)
-
+  misskeySessionId    String         @id @map("misskey_session_id")
   /// アラートをノートとして発行するかどうか
-  alertAsNote         Boolean @default(false) @map("alert_as_note")
+  alertAsNote         Boolean        @default(false) @map("alert_as_note")
   /// アラートを通知欄に表示するかどうか
-  alertAsNotification Boolean @default(true) @map("alert_as_notificaton")
+  alertAsNotification Boolean        @default(true) @map("alert_as_notificaton")
   /// アラートを投稿する場合のノートの公開範囲
-  noteVisibility      String  @default("home") @map("note_visibility")
+  noteVisibility      String         @default("home") @map("note_visibility")
   /// アラートを投稿する場合にノートを連合なしとするかどうか
-  noteLocalOnly       Boolean @default(false) @map("note_local_only")
+  noteLocalOnly       Boolean        @default(false) @map("note_local_only")
   /// アラートのテンプレート文字列
-  template            String? @db.VarChar(1024)
+  template            String?        @db.VarChar(1024)
   /// ランキングからBANされているかどうか
-  bannedFromRanking   Boolean @default(false) @map("banned_from_ranking")
+  bannedFromRanking   Boolean        @default(false) @map("banned_from_ranking")
   /// 自分の名前をランキングに表示するかどうか
-  rankingVisible      Boolean @default(false) @map("ranking_visible")
-
-  /// ミス廃ログ
-  records HolicRecord[]
+  rankingVisible      Boolean        @default(false) @map("ranking_visible")
+  misskeySession      MisskeySession @relation(fields: [misskeySessionId], references: [id], onDelete: Cascade)
+  records             HolicRecord[]
 
   @@map("misshai_account")
 }
@@ -86,22 +76,20 @@ model HolicAccount {
 /// ミス廃アラートのログ
 model HolicRecord {
   /// ID
-  id             String   @id @default(uuid())
+  id             String       @id @default(uuid())
   /// このログの日付
-  date           DateTime @db.Date
+  date           DateTime     @db.Date
   /// ノート数
-  notesCount     Int      @map("notes_count")
+  notesCount     Int          @map("notes_count")
   /// フォロー数
-  followingCount Int      @map("following_count")
+  followingCount Int          @map("following_count")
   /// フォロワー数
-  followersCount Int      @map("followers_count")
+  followersCount Int          @map("followers_count")
   /// レート値
-  rating         Float    @default(0) @db.Real
-
+  rating         Float        @default(0) @db.Real
   /// このログの所有者であるアカウントのID
-  accountId String         @map("account_id")
-  /// このログの所有者であるアカウント
-  account   HolicAccount @relation(fields: [accountId], references: [misskeySessionId], onDelete: Cascade)
+  accountId      String       @map("account_id")
+  account        HolicAccount @relation(fields: [accountId], references: [misskeySessionId], onDelete: Cascade)
 
   @@map("misshai_record")
 }
@@ -109,23 +97,21 @@ model HolicRecord {
 /// 予約されたノート
 model ScheduledNote {
   /// ID
-  id             String   @id @default(uuid())
+  id               String         @id @default(uuid())
   /// このログの日付
-  date           DateTime @db.Timestamp()
+  date             DateTime       @db.Timestamp(6)
   /// 予約したノートの本文
-  text           String
+  text             String
   /// 予約したノートのCW
-  cw             String?
+  cw               String?
   /// 予約したノートを「連合なし」とするかどうか
-  localOnly      Boolean  @map("local_only")
+  localOnly        Boolean        @map("local_only")
   /// 予約したノートの公開範囲
-  visibility     String
+  visibility       String
   /// 予約したノートが公開範囲「ダイレクト」のときに送信する相手のリスト
-  visibleUserIds String[] @map("visible_user_ids")
-
+  visibleUserIds   String[]       @map("visible_user_ids")
   /// このノートを送信するMisskeyセッションのID
   misskeySessionId String         @map("misskey_session_id")
-  /// このノートを送信するMisskeyセッション
   misskeySession   MisskeySession @relation(fields: [misskeySessionId], references: [id], onDelete: Cascade)
 
   @@map("scheduled_note")
