@@ -34,16 +34,16 @@ export const work = async () => {
     const users = await Users.find();
     const groupedUsers = groupBy(users, u => u.host);
 
-    printLog(`${users.length} アカウントのレート計算を開始します。`);
+    printLog(`${users.length}개의 계정을 발견, 레이팅을 계산하고 있습니다.`);
     await calculateAllRating(groupedUsers);
     Store.dispatch({ nowCalculating: false });
 
-    printLog(`${users.length} アカウントのアラート送信を開始します。`);
+    printLog(`${users.length}개의 계정 레이팅 계산 완료, 알림을 전송하고 있습니다.`);
     await sendAllAlerts(groupedUsers);
 
-    printLog('ミス廃アラートワーカーは正常に完了しました。');
+    printLog('Misskey Tools on phater.live 알림 전송이 완료되었습니다.');
   } catch (e) {
-    printLog('ミス廃アラートワーカーが異常終了しました。', 'error');
+    printLog('Misskey Tools on phater.live 알림 전송에 실패했습니다.', 'error');
     printLog(e instanceof Error ? errorToString(e) : JSON.stringify(e, null, '  '), 'error');
   } finally {
     Store.dispatch({ nowCalculating: false });
@@ -61,21 +61,21 @@ const calculateRating = async (host: string, users: User[]) => {
       miUser = await api<MiUser>(user.host, 'i', {}, user.token);
     } catch (e) {
       if (!(e instanceof Error)) {
-        printLog('バグ：エラーオブジェクトはErrorを継承していないといけない', 'error');
+        printLog('문제 발생: 오류 객체는 Error를 상속하지 않아야 합니다.', 'error');
       } else if (e instanceof MisskeyError) {
         if (ERROR_CODES_USER_REMOVED.includes(e.error.code)) {
           // ユーザーが削除されている場合、レコードからも消してとりやめ
-          printLog(`アカウント ${toAcct(user)} は削除されているか、凍結されているか、トークンを失効しています。そのため、本システムからアカウントを削除します。`, 'warn');
+          printLog(`${toAcct(user)} 게정이 삭제, 정지, 또는 토큰이 제거된 것으로 보이며, 시스템에서 계정이 제거되었습니다.`, 'warn');
           await deleteUser(user.username, user.host);
         } else {
-          printLog(`Misskey エラー: ${JSON.stringify(e.error)}`, 'error');
+          printLog(`Misskey 오류: ${JSON.stringify(e.error)}`, 'error');
         }
       } else if (e instanceof TimedOutError) {
-        printLog(`サーバー ${user.host} との接続に失敗したため、このサーバーのレート計算を中断します。`, 'error');
+        printLog(`${user.host} 인스턴스로의 연결에 실패하여 레이팅 계산을 중단합니다.`, 'error');
         return;
       } else {
         // おそらく通信エラー
-        printLog(`不明なエラーが発生しました。\n${errorToString(e)}`, 'error');
+        printLog(`알 수 없는 오류가 발생했습니다.\n${errorToString(e)}`, 'error');
       }
       continue;
     }
@@ -83,7 +83,7 @@ const calculateRating = async (host: string, users: User[]) => {
 
     await updateRating(user, miUser);
   }
-  printLog(`${host} ユーザー(${users.length}人) のレート計算が完了しました。`);
+  printLog(`${host} 인스턴스의 사용자 ${users.length}명의 레이팅 계산이 완료되었습니다.`);
 };
 
 const sendAllAlerts = async (groupedUsers: [string, User[]][]) => {
@@ -125,5 +125,5 @@ const sendAlerts = async (host: string, users: User[]) => {
     ]);
   }
 
-  printLog(`${host} ユーザー(${users.length}人) へのアラート送信が完了しました。`);
+  printLog(`${host} 인스턴스의 사용자 ${users.length}명의 알림 전송이 완료되었습니다.`);
 };

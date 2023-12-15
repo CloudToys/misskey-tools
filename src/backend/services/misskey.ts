@@ -18,7 +18,7 @@ export const api = async <T extends Record<string, unknown> = Record<string, unk
     try {
       data = await axios.post<T>(`https://${host}/api/${endpoint}`, a).then(res => res.data);
     } catch (e) {
-      printLog(`接続エラー: ${host}/api/${endpoint} リトライ中 (${i + 1} / ${RETRY_COUNT})\n${e}`, 'error');
+      printLog(`전송 오류: ${host}/api/${endpoint} - 재시도 중 (${i + 1} / ${RETRY_COUNT})\n${e}`, 'error');
       await delay(3000);
       continue;
     }

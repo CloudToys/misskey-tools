@@ -133,22 +133,22 @@ export const AdminPage: React.VFC = () => {
     <div className="fade vstack">
       {
         !data.isAdmin ? (
-          <p>You are not an administrator and cannot open this page.</p>
+          <p>이 리소스에 접근할 권한이 없습니다.</p>
         ) : (
           <>
             <div className="card shadow-2">
               <div className="body">
-                <h1>Announcements</h1>
+                <h1>공지사항</h1>
                 {!isEditMode && (
                   <label className="input-switch mb-2">
                     <input type="checkbox" checked={isDeleteMode} onChange={e => setDeleteMode(e.target.checked)}/>
                     <div className="switch"></div>
-                    <span>Delete Mode</span>
+                    <span>여기를 눌러 삭제 모드르 진입</span>
                   </label>
                 )}
                 { !isEditMode ? (
                   <>
-                    {isDeleteMode && <div className="ml-2 text-danger">Click the item to delete.</div>}
+                    {isDeleteMode && <div className="ml-2 text-danger">삭제할 항목을 선택해주세요.</div>}
                     <div className="large menu">
                       {announcements.map(a => (
                         <button className="item fluid" key={a.id} onClick={() => {
@@ -166,7 +166,7 @@ export const AdminPage: React.VFC = () => {
                       {!isDeleteMode && (
                         <button className="item fluid" onClick={() => setEditMode(true)}>
                           <i className="icon fas fa-plus" />
-													Create New
+													새로운 공지사항 만들기
                         </button>
                       )}
                     </div>
@@ -174,34 +174,34 @@ export const AdminPage: React.VFC = () => {
                 ) : (
                   <div className="vstack">
                     <label className="input-field">
-											Title
+											제목
                       <input type="text" value={draftTitle} onChange={e => setDraftTitle(e.target.value)} />
                     </label>
                     <label className="input-field">
-											Body
+											내용
                       <textarea className="input-field" value={draftBody} rows={10} onChange={e => setDraftBody(e.target.value)}/>
                     </label>
                     <div className="hstack" style={{justifyContent: 'flex-end'}}>
                       <button className="btn primary" onClick={submitAnnouncement} disabled={!draftTitle || !draftBody}>
-												Submit
+												완료
                       </button>
                       <button className="btn" onClick={() => {
                         selectAnnouncement(null);
                         setEditMode(false);
                       }}>
-												Cancel
+												취소
                       </button>
                     </div>
                   </div>
                 )}
               </div>
             </div>
-            <h2>Misshai</h2>
+            <h2>노트왕 알림</h2>
             <div className="vstack">
               <button className="btn danger" onClick={onClickStartMisshaiAlertWorkerButton}>
-								ミス廃アラートワーカーを強制起動する
+								Misskey Tools 알림을 지금 전송하기
               </button>
-              <h3>直近のワーカーエラー</h3>
+              <h3>최근 알림 프로세스의 기록</h3>
               {misshaiLog && <LogView log={misshaiLog} />}
             </div>
           </>

@@ -51,8 +51,8 @@ export const sendNoteAlert = async (text: string, user: User) => {
  */
 export const sendNotificationAlert = async (text: string, user: User) => {
   const res = await api(user.host, 'notifications/create', {
-    header: 'Misskey Tools',
-    icon: 'https://i.imgur.com/B991yTl.png',
+    header: 'Misskey Tools on phater.live',
+    icon: 'https://on.phater.live/logo.png',
     body: text,
   }, user.token);
 
