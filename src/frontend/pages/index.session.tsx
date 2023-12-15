@@ -52,9 +52,9 @@ export const IndexSessionPage: React.VFC = () => {
                 <td>{score.data?.followersDelta ?? '...'}</td>
               </tr>
 							<tr>
-								<td>{t('_missHai.rating')}</td>
-								<td>{session.data.rating}</td>
-							</tr>
+                <td>{t('_missHai.rating')}</td>
+                <td>{session?.rating ?? '...'}</td>
+              </tr>
             </tbody>
           </table>
         </section>
