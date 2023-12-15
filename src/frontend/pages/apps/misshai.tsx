@@ -223,9 +223,12 @@ export const MisshaiPage: React.VFC = () => {
               <td>{score.data.followersCount}</td>
               <td>{score.data.followersDelta}</td>
             </tr>
+						<tr>
+              <td>{t('_missHai.rating')}</td>
+              <td>{session.data.rating}</td>
+            </tr>
           </tbody>
         </table>
-        <p><strong>{t('_missHai.rating')}{': '}</strong>{session.data.rating}</p>
       </section>
       <section className="misshaiRanking">
         <h2><i className="fas fa-ranking-star"/> {t('_missHai.ranking')}</h2>

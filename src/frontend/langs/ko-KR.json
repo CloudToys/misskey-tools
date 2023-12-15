@@ -93,16 +93,16 @@
 	},
 	"_missHai": {
 		"ranking": "노트왕 랭킹",
-		"rankingDescription": "유저의 활동량에 따라 레이팅을 산출하여 높은 순으로 랭킹을 표시합니다.",
-		"showAll": "모두 보이기",
+		"rankingDescription": "활동량에 따라 레이팅을 산출하여 높은 순으로 랭킹을 표시합니다.",
+		"showAll": "전체 랭킹 보기",
 		"data": "내 Misskey 정보",
 		"dataBody": "내용",
-		"dataScore": "점수",
-		"dataDelta": "어제보다",
+		"dataScore": "값",
+		"dataDelta": "어제 기준 변동량",
 		"rating": "레이팅",
 		"order": "순위",
-		"showRanking": "순위를 보기",
-		"useRanking": "랭킹에 참가하기"
+		"showRanking": "랭킹 보기",
+		"useRanking": "노트왕 랭킹에 이름을 표시하기"
 	},
 	"_accounts": {
 		"switchAccount": "계정 전환",
@@ -127,7 +127,7 @@
 		"public": "공개",
 		"home": "홈",
 		"followers": "팔로워",
-		"users": "로그인한 유저"
+		"users": "나만 보기"
 	},
 	"_themes": {
 		"light": "밝은 테마",
@@ -135,21 +135,21 @@
 		"system": "시스템 설정에 따르기"
 	},
 	"_template": {
-		"description": "알림 템플릿을 수정할 수 있습니다.",
+		"description": "전송되는 알림의 내용을 수정할 수 있습니다.",
 		"description2": "'#misshaialert' 해시태그가 자동으로 맨 아래에 추가됩니다.",
-		"default": "어제의 제 Misskey 사용량을 공개합니다!\n\n노트: {notesCount}({notesDelta})\n팔로우 : {followingCount}({followingDelta})\n팔로워 :{followersCount}({followersDelta})\n\n입니다.\n{url}",
-		"insertVariables": "변수 입력",
+		"default": "어제의 제 Misskey 사용량을 공개합니다!\n\n노트: {notesCount}({notesDelta})\n팔로우 : {followingCount}({followingDelta})\n팔로워 :{followersCount}({followersDelta})\n\n같이 [참여]({url})해보지 않으실래요?",
+		"insertVariables": "변수 추가하기",
 		"insertVariablesHelp": "{ } 으로 감싼 문자열은 변수라고 하며 특별한 기능을 가집니다. 변수는 알림을 전송할 때 자동으로 변환됩니다.",
 		"_variables": {
 			"notesCount": "노트 수",
 			"followingCount": "팔로우 수",
 			"followersCount": "팔로워 수",
-			"notesDelta": "노트 수 (어제보다)",
-			"followingDelta": "팔로우 수 (어제보다)",
-			"followersDelta": "팔로워 수 (어제보다)",
+			"notesDelta": "노트 수 변동 (어제 기준)",
+			"followingDelta": "팔로우 수 변동 (어제 기준)",
+			"followersDelta": "팔로워 수 변동 (어제 기준)",
 			"url": "이 사이트의 URL",
-			"username": "나의 유저네임",
-			"host": "나의 인스턴스 호스트",
+			"username": "내 유저명",
+			"host": "내 인스턴스 주소",
 			"rating": "레이팅",
 			"gacha": "랜덤 아무말"
 		}
@@ -163,8 +163,8 @@
 		"tokenRequired": "토큰이 누락되었습니다.",
 		"invalidParameter": "매개변수가 올바르지 않습니다.",
 		"notAuthorized": "권한이 없습니다.",
-		"hostNotFound": "인스턴스에 접속할 수 없습니다. 호스트명이 올바른지, 인스턴스가 정상적으로 동작하는 지 확인해 주세요.",
-		"other": "알 수 없는 오류입니다."
+		"hostNotFound": "인스턴스에 접속할 수 없습니다. 호스트명이 올바른지, 인스턴스가 정상적으로 동작하는지 확인해 주세요.",
+		"other": "알 수 없는 오류가 발생했습니다. Mastodon 인스턴스로 로그인을 시도했을 수 있습니다."
 	},
 	"_sendTest": {
 		"title": "테스트 알림을 보내시겠습니까?",
