@@ -14,7 +14,7 @@ export default (): void => {
   const app = new Koa();
 
   console.log(`** Misskey Tools ${meta.version} **`);
-  console.log('(C) Shrimpia Network');
+  console.log('(C) Shrimpia Network, Powered by LycheeBridge');
 
   app.use(render);
   app.use(bodyParser());

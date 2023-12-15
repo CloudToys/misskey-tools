@@ -41,9 +41,9 @@ export const work = async () => {
     printLog(`${users.length}개의 계정 레이팅 계산 완료, 알림을 전송하고 있습니다.`);
     await sendAllAlerts(groupedUsers);
 
-    printLog('Misskey Tools on phater.live 알림 전송이 완료되었습니다.');
+    printLog('Misskey Tools with LycheeBridge 알림 전송이 완료되었습니다.');
   } catch (e) {
-    printLog('Misskey Tools on phater.live 알림 전송에 실패했습니다.', 'error');
+    printLog('Misskey Tools with LycheeBridge 알림 전송에 실패했습니다.', 'error');
     printLog(e instanceof Error ? errorToString(e) : JSON.stringify(e, null, '  '), 'error');
   } finally {
     Store.dispatch({ nowCalculating: false });

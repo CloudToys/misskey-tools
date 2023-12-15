@@ -1,10 +1,18 @@
+@font-face {
+	font-family: 'Pretendard JP Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url("/assets/PretendardJPVariable.woff2") format('woff2-variations');
+}
+
 html {
 	font-size: 16px;
 }
 
 body {
     --max-width: 1024px;
-    font-family: "Koruri", sans-serif;
+    font-family: "Pretendard JP Variable", "Koruri", sans-serif;
 }
 
 hr {

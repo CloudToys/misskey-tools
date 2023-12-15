@@ -69,7 +69,7 @@ const AppInner : React.VFC = () => {
         </div>
       ) : <Router />}
       <footer className="text-center pa-5">
-        <p>(C) Shrimpia Network, Running on phater.live with ❤️</p>
+        <p>Powered by LycheeBridge with ❤️</p>
         <p><span dangerouslySetInnerHTML={{__html: t('disclaimerForMisskeyHq')}} /></p>
         <p>
           <a href="https://phater.live/@ALPINE_SECTOR/pages/mktools" target="_blank" rel="noreferrer noopener">

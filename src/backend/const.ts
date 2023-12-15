@@ -11,8 +11,8 @@ export const defaultTemplate = '昨日のMisskeyの活動は\n\nノート: {note
 export const currentTokenVersion = 2;
 
 export const misskeyAppInfo = {
-  name: 'Misskey Tools on phater.live',
-  description: 'Misskey Tools의 포크를 통한 유지 버전',
+  name: 'Misskey Tools with LycheeBridge',
+  description: 'LycheeBridge에서 관리하는 Misskey Tools의 포크 버전',
   permission: [
     'read:account',
     'write:account',

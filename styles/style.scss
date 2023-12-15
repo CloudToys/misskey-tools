@@ -1,15 +1,15 @@
 @font-face {
-  font-family: "OTADESIGN Rounded";
-  src: url("/assets/otadesign_rounded.woff2") format('woff2'),
-       url("/assets/otadesign_rounded.woff") format('woff');
-}
-
-@font-face {
 	font-family: 'Pretendard JP Variable';
 	font-weight: 45 920;
 	font-style: normal;
 	font-display: swap;
-	src: url('/assets/PretendardJPVariable.woff2') format('woff2-variations');
+	src: url("/assets/PretendardJPVariable.woff2") format('woff2-variations');
+}
+
+@font-face {
+  font-family: "OTADESIGN Rounded";
+  src: url("/assets/otadesign_rounded.woff2") format('woff2'),
+       url("/assets/otadesign_rounded.woff") format('woff');
 }
 
 .font-misskey {
