@@ -30,23 +30,31 @@ export const work = async () => {
   clearLog();
   printLog('Started.');
 
-  try {
-    const users = await Users.find();
-    const groupedUsers = groupBy(users, u => u.host);
+  const users = await Users.find();
+  const groupedUsers = groupBy(users, u => u.host);
 
+  try {
     printLog(`${users.length}개의 계정을 발견, 레이팅을 계산하고 있습니다.`);
     await calculateAllRating(groupedUsers);
-    Store.dispatch({ nowCalculating: false });
+  }
+  catch (e) {
+	printLog('Misskey Tools with LycheeBridge 레이팅 계산에 실패했습니다.', 'error');
+	printLog(e instanceof Error ? errorToString(e) : JSON.stringify(e, null, '  '), 'error');
+	Store.dispatch({ nowCalculating: false });
+  }
+  finally {
+	Store.dispatch({ nowCalculating: false });
+	printLog(`${users.length}개의 계정 레이팅 계산이 완료되었습니다.`);
+  }
 
-    printLog(`${users.length}개의 계정 레이팅 계산 완료, 알림을 전송하고 있습니다.`);
+  try {
+	printLog(`${users.length}개의 계정에 알림을 전송하고 있습니다.`);
     await sendAllAlerts(groupedUsers);
-
-    printLog('Misskey Tools with LycheeBridge 알림 전송이 완료되었습니다.');
   } catch (e) {
     printLog('Misskey Tools with LycheeBridge 알림 전송에 실패했습니다.', 'error');
     printLog(e instanceof Error ? errorToString(e) : JSON.stringify(e, null, '  '), 'error');
   } finally {
-    Store.dispatch({ nowCalculating: false });
+	printLog('Misskey Tools with LycheeBridge 알림 전송이 완료되었습니다.');
   }
 };
 
@@ -67,12 +75,14 @@ const calculateRating = async (host: string, users: User[]) => {
           // ユーザーが削除されている場合、レコードからも消してとりやめ
           printLog(`${toAcct(user)} 게정이 삭제, 정지, 또는 토큰이 제거된 것으로 보이며, 시스템에서 계정이 제거되었습니다.`, 'warn');
           await deleteUser(user.username, user.host);
+		  continue;
         } else {
           printLog(`Misskey 오류: ${JSON.stringify(e.error)}`, 'error');
+		  continue;
         }
       } else if (e instanceof TimedOutError) {
         printLog(`${user.host} 인스턴스로의 연결에 실패하여 레이팅 계산을 중단합니다.`, 'error');
-        return;
+        continue;
       } else {
         // おそらく通信エラー
         printLog(`알 수 없는 오류가 발생했습니다.\n${errorToString(e)}`, 'error');
@@ -110,19 +120,31 @@ const sendAlerts = async (host: string, users: User[]) => {
 
   // 通知
   for (const {user, count, message} of models.filter(m => m.user.alertMode === 'notification' || m.user.alertMode === 'both')) {
-    await sendNotificationAlert(message, user);
-    if (user.alertMode === 'notification') {
-      await updateScore(user, count);
-    }
+	try {
+      await sendNotificationAlert(message, user);
+	} catch (e) {
+	  printLog('Misskey Tools with LycheeBridge 알림 전송에 실패했습니다.', 'error');
+      printLog(e instanceof Error ? errorToString(e) : JSON.stringify(e, null, '  '), 'error');
+	} finally {
+	  if (user.alertMode === 'notification') {
+		await updateScore(user, count);
+	  }
+	}
   }
 
   // アラート
   for (const {user, count, message} of models.filter(m => m.user.alertMode === 'note' || m.user.alertMode === 'both')) {
-    await sendNoteAlert(message, user);
-    await Promise.all([
-      updateScore(user, count),
-      delay(1000),
-    ]);
+	try {
+      await sendNoteAlert(message, user);
+	} catch (e) {
+	  printLog('Misskey Tools with LycheeBridge 알림 전송에 실패했습니다.', 'error');
+	  printLog(e instanceof Error ? errorToString(e) : JSON.stringify(e, null, '  '), 'error');
+	} finally {
+	  await Promise.all([
+		updateScore(user, count),
+		delay(1000),
+	  ]);
+	}
   }
 
   printLog(`${host} 인스턴스의 사용자 ${users.length}명의 알림 전송이 완료되었습니다.`);
