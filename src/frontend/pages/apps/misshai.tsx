@@ -103,7 +103,7 @@ export const MisshaiPage: React.VFC = () => {
         remoteFollowersOnly: data.remoteFollowersOnly,
         template: data.template,
         useRanking: data.useRanking,
-		appendHastag: data.appendHashtag
+		appendHashtag: data.appendHashtag
       });
     }
   }, [data]);
