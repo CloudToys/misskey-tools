@@ -52,7 +52,7 @@ export const sendNoteAlert = async (text: string, user: User) => {
 export const sendNotificationAlert = async (text: string, user: User) => {
   const res = await api(user.host, 'notifications/create', {
     header: 'Misskey Tools with LycheeBridge',
-    icon: 'https://in.gozou.moe/lcb.png',
+    icon: 'https://t.psec.dev/assets/lcb.png',
     body: text,
   }, user.token);
 
