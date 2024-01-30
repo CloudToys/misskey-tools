@@ -242,7 +242,7 @@ export const MisshaiPage: React.VFC = () => {
         <h2><i className="fas fa-gear"></i> {t('settings')}</h2>
         <div className="vstack">
           <div className="card pa-2">
-            <label className="input-check">
+            <label className="input-check mt-2">
               <input type="checkbox" checked={draft.useRanking} onChange={(e) => {
                 updateSetting({ useRanking: e.target.checked });
               }}/>
