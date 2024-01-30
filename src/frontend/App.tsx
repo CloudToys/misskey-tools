@@ -72,7 +72,7 @@ const AppInner : React.VFC = () => {
         <p>Powered by LycheeBridge with ❤️</p>
         <p><span dangerouslySetInnerHTML={{__html: t('disclaimerForMisskeyHq')}} /></p>
         <p>
-          <a href="https://phater.live/@ALPINE_SECTOR/pages/mktools" target="_blank" rel="noreferrer noopener">
+          <a href="https://blog.gozou.moe/mktools-terms" target="_blank" rel="noreferrer noopener">
             {t('termsOfService')}
           </a>
         </p>
