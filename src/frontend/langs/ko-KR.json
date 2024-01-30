@@ -102,7 +102,8 @@
 		"rating": "레이팅",
 		"order": "순위",
 		"showRanking": "랭킹 보기",
-		"useRanking": "노트왕 랭킹에 이름을 표시하기"
+		"useRanking": "노트왕 랭킹에 이름을 표시하기",
+		"appendHashtag": "#misshaialert 해시태그를 추가하기"
 	},
 	"_accounts": {
 		"switchAccount": "계정 전환",
@@ -136,7 +137,7 @@
 	},
 	"_template": {
 		"description": "전송되는 알림의 내용을 수정할 수 있습니다.",
-		"description2": "'#misshaialert' 해시태그가 자동으로 맨 아래에 추가됩니다.",
+		"description2": "'#misshaialert' 해시태그를 설정을 통해 추가할 수 있습니다.",
 		"default": "어제의 제 Misskey 사용량을 공개합니다!\n\n노트 : {notesCount} ({notesDelta})\n팔로잉 : {followingCount} ({followingDelta})\n팔로워 : {followersCount} ({followersDelta})\n\n같이 [참여]({url})해보지 않으실래요?",
 		"insertVariables": "변수 추가하기",
 		"insertVariablesHelp": "{ } 으로 감싼 문자열은 변수라고 하며 특별한 기능을 가집니다. 변수는 알림을 전송할 때 자동으로 변환됩니다.",

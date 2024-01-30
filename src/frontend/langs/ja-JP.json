@@ -102,7 +102,8 @@
 		"rating": "レート",
 		"order": "順位",
 		"showRanking": "ランキングを見る",
-		"useRanking": "ランキングに参加する"
+		"useRanking": "ランキングに参加する",
+		"appendHashtag": "#misshaialertハッシュタグをテンプレートに追加"
 	},
 	"_accounts": {
 		"switchAccount": "アカウント切り替え",
