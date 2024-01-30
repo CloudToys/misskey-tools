@@ -37,6 +37,7 @@ type SettingDraftType = Partial<Pick<IUser,
 	| 'remoteFollowersOnly'
 	| 'template'
 	| 'useRanking'
+	| 'appendHashtag'
 >>;
 
 type DraftReducer = React.Reducer<SettingDraftType, Partial<SettingDraftType>>;
@@ -60,7 +61,7 @@ export const MisshaiPage: React.VFC = () => {
     remoteFollowersOnly: data?.remoteFollowersOnly ?? false,
     template: data?.template ?? null,
     useRanking: data?.useRanking ?? false,
-	appendHashtag: data?.appendHashtag ?? true, 
+	appendHashtag: data?.appendHashtag ?? true,
   });
 
   const templateTextarea = useRef<HTMLTextAreaElement>(null);
@@ -101,7 +102,8 @@ export const MisshaiPage: React.VFC = () => {
         localOnly: data.localOnly,
         remoteFollowersOnly: data.remoteFollowersOnly,
         template: data.template,
-        useRanking: data.useRanking
+        useRanking: data.useRanking,
+		appendHastag: data.appendHashtag
       });
     }
   }, [data]);
