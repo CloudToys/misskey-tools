@@ -60,6 +60,7 @@ export const MisshaiPage: React.VFC = () => {
     remoteFollowersOnly: data?.remoteFollowersOnly ?? false,
     template: data?.template ?? null,
     useRanking: data?.useRanking ?? false,
+	appendHashtag: data?.appendHashtag ?? true, 
   });
 
   const templateTextarea = useRef<HTMLTextAreaElement>(null);
@@ -244,6 +245,12 @@ export const MisshaiPage: React.VFC = () => {
                 updateSetting({ useRanking: e.target.checked });
               }}/>
               <span>{t('_missHai.useRanking')}</span>
+            </label>
+			<label className="input-check">
+              <input type="checkbox" checked={draft.appendHashtag} onChange={(e) => {
+                updateSetting({ appendHashtag: e.target.checked });
+              }}/>
+              <span>{t('_missHai.appendHashtag')}</span>
             </label>
           </div>
           <div className="card pa-2">

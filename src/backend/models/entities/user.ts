@@ -101,6 +101,12 @@ export class User implements IUser {
 
   @Column({
     type: 'boolean',
+    default: true,
+  })
+  public appendHashtag: boolean;
+
+  @Column({
+    type: 'boolean',
     default: false,
   })
   public bannedFromRanking: boolean;

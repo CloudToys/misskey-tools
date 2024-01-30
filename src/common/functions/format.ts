@@ -42,8 +42,12 @@ export const format = (user: IUser, count: Count): string => {
     ...getDelta(user, count),
   };
   const template = user.template || defaultTemplate;
-  return template.replace(variableRegex, (m, name) => {
+  let result = template.replace(variableRegex, (m, name) => {
     const v = variables[name];
     return !v ? m : typeof v === 'function' ? v(score, user) : v;
-  }) + '\n\n#misshaialert';
+  });
+  if (user.appendHashtag) {
+	result = result + '\n\n#misshaialert'
+  }
+  return result;
 };

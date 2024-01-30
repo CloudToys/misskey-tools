@@ -22,4 +22,7 @@ export class UserSetting {
 
   @IsOptional()
     useRanking?: boolean;
+
+  @IsOptional()
+	appendHashtag?: boolean;
 }
