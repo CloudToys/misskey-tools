@@ -61,7 +61,7 @@ export const MisshaiPage: React.VFC = () => {
     remoteFollowersOnly: data?.remoteFollowersOnly ?? false,
     template: data?.template ?? null,
     useRanking: data?.useRanking ?? false,
-	appendHashtag: data?.appendHashtag ?? true,
+    appendHashtag: data?.appendHashtag ?? true,
   });
 
   const templateTextarea = useRef<HTMLTextAreaElement>(null);
@@ -103,7 +103,7 @@ export const MisshaiPage: React.VFC = () => {
         remoteFollowersOnly: data.remoteFollowersOnly,
         template: data.template,
         useRanking: data.useRanking,
-		appendHashtag: data.appendHashtag
+        appendHashtag: data.appendHashtag
       });
     }
   }, [data]);
@@ -226,7 +226,7 @@ export const MisshaiPage: React.VFC = () => {
               <td>{score.data.followersCount}</td>
               <td>{score.data.followersDelta}</td>
             </tr>
-						<tr>
+            <tr>
               <td>{t('_missHai.rating')}</td>
               <td>{session.data.rating}</td>
             </tr>
@@ -248,7 +248,7 @@ export const MisshaiPage: React.VFC = () => {
               }}/>
               <span>{t('_missHai.useRanking')}</span>
             </label>
-			<label className="input-check mt-2">
+            <label className="input-check mt-2">
               <input type="checkbox" checked={draft.appendHashtag} onChange={(e) => {
                 updateSetting({ appendHashtag: e.target.checked });
               }}/>
