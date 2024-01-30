@@ -37,6 +37,7 @@ export class SessionController {
     if (setting.remoteFollowersOnly != null) s.remoteFollowersOnly = setting.remoteFollowersOnly;
     if (setting.template !== undefined) s.template = setting.template;
     if (setting.useRanking !== undefined) s.useRanking = setting.useRanking;
+    if (setting.appendHashtag !== undefined) s.appendHashtag = setting.appendHashtag;
     if (Object.keys(s).length === 0) return;
     await updateUser(user.username, user.host, s);
   }
