@@ -125,10 +125,10 @@ export const IndexWelcomePage: React.VFC = () => {
             <p>{t('_welcome.catAdjusterDescription')}</p>
           </article>
         </div>
-        <article className="mt-5">
+        {/*<article className="mt-5">
           <h3>{t('_welcome.nextFeaturesTitle')}</h3>
           <p>{t('_welcome.nextFeaturesDescription')}</p>
-        </article>
+        </article> */}
       </article>
     </>
   );
