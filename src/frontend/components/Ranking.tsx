@@ -3,19 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { $get } from '../misc/api';
 
 interface RankingResponse {
-	isCalculating: boolean;
-	userCount: number;
-	ranking: Ranking[];
+  isCalculating: boolean;
+  userCount: number;
+  ranking: Ranking[];
 }
 
 interface Ranking {
-	username?: string;
-	host?: string;
-	rating: number;
+  username?: string;
+  host?: string;
+  rating: number;
 }
 
 export type RankingProps = {
-	limit?: number;
+  limit?: number;
 };
 
 export const Ranking: React.VFC<RankingProps> = ({limit}) => {
@@ -60,7 +60,7 @@ export const Ranking: React.VFC<RankingProps> = ({limit}) => {
             <div className="item flex" key={i}>
               <div className="text-bold pr-2">{i + 1}</div>
               <div>
-							-------------<br/>
+              -------------<br/>
                 <span className="text-dimmed text-75">{t('_missHai.rating')}: {r.rating}</span>
               </div>
             </div>

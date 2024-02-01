@@ -50,7 +50,7 @@
 	"update": "更新する",
 	"shareMisskeyTools": "#MisskeyTools をシェアする",
 	"shareMisskeyToolsNote": "#MisskeyTools はいいぞ\n\nhttps://t.psec.dev",
-	"instanceUrlPlaceholder": "例：misskey.io",
+	"instanceUrlPlaceholder": "k.lapy.link, stella.place, psec.dev...",
 	"settings": "設定",
 	"accentColor": "アクセントカラー",
 	"changelog": "更新履歴",
@@ -164,6 +164,7 @@
 		"tokenRequired": "トークンがありません。",
 		"invalidParameter": "パラメータが不正です。",
 		"notAuthorized": "権限がありません。",
+    "noNewUserAllowed": "現在、新規登録はできません。",
 		"hostNotFound": "インスタンスに接続できませんでした。ホスト名が正しく入力されているか、接続先のインスタンスが正常に動作しているかご確認ください。",
 		"other": "不明なエラーです。"
 	},

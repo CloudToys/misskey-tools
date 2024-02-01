@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export type HashtagTimelineProps = {
-	hashtag: string;
+  hashtag: string;
 };
 
 export const HashtagTimeline: React.VFC<HashtagTimelineProps> = ({hashtag}) => {

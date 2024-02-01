@@ -51,7 +51,7 @@ export const IndexSessionPage: React.VFC = () => {
                 <td>{score.data?.followersCount ?? '...'}</td>
                 <td>{score.data?.followersDelta ?? '...'}</td>
               </tr>
-							<tr>
+              <tr>
                 <td>{t('_missHai.rating')}</td>
                 <td>{session?.rating ?? '...'}</td>
               </tr>
@@ -64,7 +64,7 @@ export const IndexSessionPage: React.VFC = () => {
           <div className="menu large">
             <a className="item" href="https://psec.dev/@PSEC" target="_blank" rel="noopener noreferrer">
               <i className="icon fas fa-at"></i>
-							@PSEC@psec.dev
+              @PSEC@psec.dev
             </a>
           </div>
         </section>

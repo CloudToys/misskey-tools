@@ -10,19 +10,19 @@ const merge = (baseData: Record<string, unknown>, newData: Record<string, unknow
   });
 };
 
-const _enUS = merge(jaJP, enUS);
-const _koKR = merge(_enUS, koKR)
+const _enUS = merge(koKR, enUS);
+const _jaJP = merge(_enUS, jaJP);
 
 export const resources = {
-  'ja_JP': { translation: jaJP },
+  'ko_KR': { translation: koKR },
   'en_US': { translation: _enUS },
-  'ko_KR': { translation: _koKR },
+  'ja_JP': { translation: _jaJP },
 };
 
 export const languageName = {
-  'ja_JP': '日本語',
-  'en_US': 'English',
   'ko_KR': '한국어',
+  'en_US': 'English',
+  'ja_JP': '日本語',
 } as const;
 
 export type LanguageCode = keyof typeof resources;

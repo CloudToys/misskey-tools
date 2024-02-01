@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 const Input = styled.input`
-	width: auto;
-	flex: 1;
+  width: auto;
+  flex: 1;
 `;
 
 export const LoginForm: React.VFC = () => {

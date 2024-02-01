@@ -10,60 +10,60 @@ import Twemoji from 'react-twemoji';
 import { useAnnouncements } from '../hooks/useAnnouncements';
 
 const Hero = styled.div<IsMobileProp>`
-	display: flex;
-	position: relative;
-	background: linear-gradient(-135deg, rgb(1, 169, 46), rgb(134, 179, 0) 35%);
-	color: var(--white);
-	padding: ${f => f.isMobile ? '16px' : '60px 90px'};
-	overflow: hidden;
-	gap: var(--margin);
-	> .hero {
-		flex: 2;
-		min-width: 0;
-		position: relative;
-		z-index: 1000;
-		p {
-			${f => f.isMobile ? 'font-size: 1rem;' : ''}
-		}
-	}
-	> .announcements {
-		flex: 1;
-		min-width: 0;
-		max-height: 512px;
-		overflow: auto;
-		padding: var(--margin);
-		border-radius: var(--radius);
-		background: var(--black-50);
-		backdrop-filter: blur(4px) brightness(120%);
-		z-index: 1000;
-		@media screen and (max-width: 800px) {
-			display: none;
-		}
-	}
-	> .rects {
-		position: absolute;
-		display: grid;
-		right: 160px;
-		bottom: -120px;
-		width: 400px;
-		height: 400px;
-		gap: 8px;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		transform-origin: center center;
-		transform: rotate(45deg);
-		opacity: 0.5;
-		> .rect {
-			border: 2px solid var(--white);
-			border-radius: 24px;
-			box-shadow: 0 2px 4px var(--shadow-color);
-		}
-	}
+  display: flex;
+  position: relative;
+  background: linear-gradient(-135deg, rgb(1, 169, 46), rgb(134, 179, 0) 35%);
+  color: var(--white);
+  padding: ${f => f.isMobile ? '16px' : '60px 90px'};
+  overflow: hidden;
+  gap: var(--margin);
+  > .hero {
+    flex: 2;
+    min-width: 0;
+    position: relative;
+    z-index: 1000;
+    p {
+      ${f => f.isMobile ? 'font-size: 1rem;' : ''}
+    }
+  }
+  > .announcements {
+    flex: 1;
+    min-width: 0;
+    max-height: 512px;
+    overflow: auto;
+    padding: var(--margin);
+    border-radius: var(--radius);
+    background: var(--black-50);
+    backdrop-filter: blur(4px) brightness(120%);
+    z-index: 1000;
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+  > .rects {
+    position: absolute;
+    display: grid;
+    right: 160px;
+    bottom: -120px;
+    width: 400px;
+    height: 400px;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    transform-origin: center center;
+    transform: rotate(45deg);
+    opacity: 0.5;
+    > .rect {
+      border: 2px solid var(--white);
+      border-radius: 24px;
+      box-shadow: 0 2px 4px var(--shadow-color);
+    }
+  }
 `;
 
 const FormWrapper = styled.div`
-	max-width: 500px;
-	color: var(--fg);
+  max-width: 500px;
+  color: var(--fg);
 `;
 
 export const IndexWelcomePage: React.VFC = () => {
@@ -102,7 +102,7 @@ export const IndexWelcomePage: React.VFC = () => {
       </Hero>
       <Twemoji options={{className: 'twemoji'}}>
         <div className="py-4 text-125 text-center">
-					👍&emsp;❤&emsp;😆&emsp;🎉&emsp;🍮
+          👍&emsp;❤&emsp;😆&emsp;🎉&emsp;🍮
         </div>
       </Twemoji>
       <article className="xarticle vstack pa-2">

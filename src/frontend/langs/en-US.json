@@ -50,7 +50,7 @@
 	"update": "Update",
 	"shareMisskeyTools": "Share #MisskeyTools",
 	"shareMisskeyToolsNote": "Try #MisskeyTools !\n\nhttps://t.psec.dev",
-	"instanceUrlPlaceholder": "e.g. misskey.io",
+	"instanceUrlPlaceholder": "k.lapy.link, stella.place, psec.dev...",
 	"settings": "Settings",
 	"accentColor": "Accent Color",
 	"changelog": "Changelog",
@@ -156,7 +156,7 @@
 		}
 	},
 	"_error": {
-		"sorry": "Something went wrong. Please retry again.",
+		"sorry": "We have some small problem. Please try again later.",
 		"additionalInfo": "Additional Info: ",
 		"hitorisskeyIsDenied": "You cannot integrate with hitorisskey.",
 		"teapot": "I'm a teapot.",
@@ -164,6 +164,7 @@
 		"tokenRequired": "Token is required.",
 		"invalidParameter": "Invalid parameter.",
 		"notAuthorized": "Not authorized.",
+    "noNewUserAllowed": "You cannot signup to this service for now.",
 		"hostNotFound": "Could not connect to the instance. Make sure that the host name is correct and the instance is live.",
 		"other": "None"
 	},

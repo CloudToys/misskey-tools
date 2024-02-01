@@ -6,7 +6,7 @@ import { useGetSessionQuery } from './services/session';
 import { useSelector } from './store';
 
 export type HeaderProps = {
-	title?: string;
+  title?: string;
 };
 
 export const Header: React.FC<HeaderProps> = ({title}) => {

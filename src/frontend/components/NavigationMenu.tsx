@@ -63,7 +63,7 @@ export const NavigationMenu: React.VFC = () => {
         {meta && (
           <section>
             <a className="item" href={CHANGELOG_URL} onClick={onClickItem}>
-							v{meta.version} {t('changelog')}
+              v{meta.version} {t('changelog')}
             </a>
           </section>
         )}

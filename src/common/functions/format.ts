@@ -47,7 +47,7 @@ export const format = (user: IUser, count: Count): string => {
     return !v ? m : typeof v === 'function' ? v(score, user) : v;
   });
   if (user.appendHashtag) {
-	result = result + '\n\n#misshaialert'
+    result = result + '\n\n#misshaialert';
   }
   return result;
 };

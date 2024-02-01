@@ -14,23 +14,23 @@ import { designSystemColors } from '../../common/types/design-system-color';
 import styled from 'styled-components';
 
 const ColorInput = styled.input<{color: string}>`
-	display: block;
-	appearance: none;
-	width: 32px;
-	height: 32px;
-	border-radius: 999px;
-	background-color: var(--panel);
-	border: 4px solid var(--${p => p.color});
-	cursor: pointer;
-	transition: all 0.2s ease;
-	&:checked {
-		background: var(--${p => p.color});
-		cursor: default;
-	}
-	&:hover, &:focus {
-		box-shadow: 0 0 16px var(--${p => p.color});
-		outline: none;
-	}
+  display: block;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background-color: var(--panel);
+  border: 4px solid var(--${p => p.color});
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &:checked {
+    background: var(--${p => p.color});
+    cursor: default;
+  }
+  &:hover, &:focus {
+    box-shadow: 0 0 16px var(--${p => p.color});
+    outline: none;
+  }
 `;
 
 export const SettingPage: React.VFC = () => {

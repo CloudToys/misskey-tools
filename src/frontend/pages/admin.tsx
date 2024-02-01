@@ -85,9 +85,9 @@ export const AdminPage: React.VFC = () => {
   };
 
   /**
-	 * Session APIのエラーハンドリング
-	 * このAPIがエラーを返した = トークンが無効 なのでトークンを削除してログアウトする
-	 */
+   * Session APIのエラーハンドリング
+   * このAPIがエラーを返した = トークンが無効 なのでトークンを削除してログアウトする
+   */
   useEffect(() => {
     if (error) {
       console.error(error);
@@ -97,8 +97,8 @@ export const AdminPage: React.VFC = () => {
   }, [error]);
 
   /**
-	 * Edit Modeがオンのとき、Delete Modeを無効化する（誤操作防止）
-	 */
+   * Edit Modeがオンのとき、Delete Modeを無効化する（誤操作防止）
+   */
   useEffect(() => {
     if (isEditMode) {
       setDeleteMode(false);
@@ -106,8 +106,8 @@ export const AdminPage: React.VFC = () => {
   }, [isEditMode]);
 
   /**
-	 * お知らせ取得
-	 */
+   * お知らせ取得
+   */
   useEffect(() => {
     fetchAll();
   }, []);
@@ -166,7 +166,7 @@ export const AdminPage: React.VFC = () => {
                       {!isDeleteMode && (
                         <button className="item fluid" onClick={() => setEditMode(true)}>
                           <i className="icon fas fa-plus" />
-													새로운 공지사항 만들기
+                          새로운 공지사항 만들기
                         </button>
                       )}
                     </div>
@@ -174,22 +174,22 @@ export const AdminPage: React.VFC = () => {
                 ) : (
                   <div className="vstack">
                     <label className="input-field">
-											제목
+                      제목
                       <input type="text" value={draftTitle} onChange={e => setDraftTitle(e.target.value)} />
                     </label>
                     <label className="input-field">
-											내용
+                      내용
                       <textarea className="input-field" value={draftBody} rows={10} onChange={e => setDraftBody(e.target.value)}/>
                     </label>
                     <div className="hstack" style={{justifyContent: 'flex-end'}}>
                       <button className="btn primary" onClick={submitAnnouncement} disabled={!draftTitle || !draftBody}>
-												완료
+                        완료
                       </button>
                       <button className="btn" onClick={() => {
                         selectAnnouncement(null);
                         setEditMode(false);
                       }}>
-												취소
+                        취소
                       </button>
                     </div>
                   </div>
@@ -199,7 +199,7 @@ export const AdminPage: React.VFC = () => {
             <h2>노트왕 알림</h2>
             <div className="vstack">
               <button className="btn danger" onClick={onClickStartMisshaiAlertWorkerButton}>
-								Misskey Tools 알림을 지금 전송하기
+                Misskey Tools 알림을 지금 전송하기
               </button>
               <h3>최근 알림 프로세스의 기록</h3>
               {misshaiLog && <LogView log={misshaiLog} />}

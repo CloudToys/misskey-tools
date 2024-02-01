@@ -1,8 +1,8 @@
 import React from 'react';
 
 export type CardProps = {
-	className?: string;
-	bodyClassName?: string;
+  className?: string;
+  bodyClassName?: string;
 };
 
 export const Card: React.FC<CardProps> = ({children, className, bodyClassName}) => {

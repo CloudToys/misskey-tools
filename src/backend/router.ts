@@ -180,8 +180,12 @@ router.get('(.*)', async (ctx) => {
 
 async function login(ctx: Context, user: Record<string, unknown>, host: string, token: string) {
   const isNewcomer = !(await getUser(user.username as string, host));
-  await upsertUser(user.username as string, host, token);
+  if (isNewcomer) {
+    await die(ctx, 'noNewUserAllowed', 403);
+    return;
+  }
 
+  await upsertUser(user.username as string, host, token);
   const u = await getUser(user.username as string, host);
 
   if (!u) {

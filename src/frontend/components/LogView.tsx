@@ -7,7 +7,7 @@ const LogItem: React.FC<{log: Log}> = ({log}) => {
 
   return (
     <div className={`log ${log.level}`}>
-			[{time}] {log.text}
+      [{time}] {log.text}
     </div>
   );
 };

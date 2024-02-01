@@ -43,7 +43,7 @@ export const AccountsPage: React.VFC = () => {
               accounts.map(account => (
                 <button className="item fluid" style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} onClick={() => switchAccount(account.misshaiToken)}>
                   <i className="icon fas fa-chevron-right" />
-										@{account.username}@{account.host}
+                    @{account.username}@{account.host}
                   <button className="btn flat text-danger" style={{marginLeft: 'auto'}} onClick={e => {
                     const filteredAccounts = accounts.filter(ac => ac.id !== account.id);
                     dispatch(setAccounts(filteredAccounts));

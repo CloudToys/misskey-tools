@@ -1,8 +1,8 @@
 import React from 'react';
 
 export type SkeletonProps = {
-	width?: string | number;
-	height?: string | number;
+  width?: string | number;
+  height?: string | number;
 };
 
 export const Skeleton: React.VFC<SkeletonProps> = (p) => {

@@ -31,13 +31,13 @@ const variables = [
 ] as const;
 
 type SettingDraftType = Partial<Pick<IUser,
-	| 'alertMode'
-	| 'visibility'
-	| 'localOnly'
-	| 'remoteFollowersOnly'
-	| 'template'
-	| 'useRanking'
-	| 'appendHashtag'
+  | 'alertMode'
+  | 'visibility'
+  | 'localOnly'
+  | 'remoteFollowersOnly'
+  | 'template'
+  | 'useRanking'
+  | 'appendHashtag'
 >>;
 
 type DraftReducer = React.Reducer<SettingDraftType, Partial<SettingDraftType>>;
@@ -169,9 +169,9 @@ export const MisshaiPage: React.VFC = () => {
   }, [dispatch, t]);
 
   /**
-	 * Session APIのエラーハンドリング
-	 * このAPIがエラーを返した = トークンが無効 なのでトークンを削除してログアウトする
-	 */
+   * Session APIのエラーハンドリング
+   * このAPIがエラーを返した = トークンが無効 なのでトークンを削除してログアウトする
+   */
   useEffect(() => {
     if (session.error) {
       console.error(session.error);

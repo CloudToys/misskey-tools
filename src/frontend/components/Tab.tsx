@@ -1,15 +1,15 @@
 import React from 'react';
 
 export type TabItem = {
-	label: string;
-	key: string;
-	isNew?: boolean;
+  label: string;
+  key: string;
+  isNew?: boolean;
 };
 
 export type TabProps = {
-	items: TabItem[];
-	selected: string;
-	onSelect: (key: string) => void;
+  items: TabItem[];
+  selected: string;
+  onSelect: (key: string) => void;
 };
 
 // タブコンポーネント

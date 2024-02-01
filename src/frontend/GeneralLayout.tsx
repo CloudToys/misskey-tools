@@ -10,36 +10,36 @@ import { useSelector } from './store';
 import { setDrawerShown } from './store/slices/screen';
 
 const Container = styled.div<IsMobileProp>`
-	padding: var(--margin);
-	position: relative;
+  padding: var(--margin);
+  position: relative;
 `;
 
 const Sidebar = styled.nav`
-	width: 320px;
-	position: fixed;
-	top: var(--margin);
-	left: var(--margin);
+  width: 320px;
+  position: fixed;
+  top: var(--margin);
+  left: var(--margin);
 `;
 
 const Main = styled.main<IsMobileProp>`
-	flex: 1;
+  flex: 1;
   margin-top: 80px;
-	margin-left: ${p => !p.isMobile ? `${320 + 16}px` : 0};
-	min-width: 0;
+  margin-left: ${p => !p.isMobile ? `${320 + 16}px` : 0};
+  min-width: 0;
 `;
 
 const MobileHeader = styled.header`
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 64px;
-	background: var(--panel);
-	z-index: 1000;
-	> h1 {
-		font-size: 1rem;
-		margin-bottom: 0;
-	}
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--panel);
+  z-index: 1000;
+  > h1 {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
 `;
 
 export const GeneralLayout: React.FC = ({children}) => {
