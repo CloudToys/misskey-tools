@@ -17,6 +17,8 @@ export const misskeyAppInfo = {
     'read:account',
     'write:account',
     'write:notes',
+    'read:drive',
+    'write:drive',
     'read:notifications',
     'write:notifications',
     'read:channels',
