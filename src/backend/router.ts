@@ -180,7 +180,7 @@ router.get('(.*)', async (ctx) => {
 
 async function login(ctx: Context, user: Record<string, unknown>, host: string, token: string) {
   const isNewcomer = !(await getUser(user.username as string, host));
-  if (isNewcomer) {
+  if (isNewcomer && config.whitelist && !config.instances.includes(host)) {
     await die(ctx, 'noNewUserAllowed', 403);
     return;
   }
