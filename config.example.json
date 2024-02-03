@@ -1,12 +1,12 @@
 {
 	"port": 4000,
-	"url": "https://misskey.tools",
+	"url": "https://t.psec.dev",
 	"uaExtra": "",
 	"db": {
 		"host": "localhost",
 		"port": 5432,
-		"user": "user",
-		"pass": "pass",
+		"user": "tools",
+		"pass": "some-random-password-string",
 		"db": "tools",
 		"extra": {}
 	},
@@ -14,4 +14,10 @@
 		"username": "your_user_name",
 		"host": "your-instance-host"
 	}
+  "whitelist": {
+    "enabled": false,
+    "instances": [
+      "psec.dev"
+    ]
+  }
 }
