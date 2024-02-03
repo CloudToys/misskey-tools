@@ -1,13 +1,5 @@
-export const defaultTemplate = '昨日のMisskeyの活動は\n\nノート: {notesCount}({notesDelta})\nフォロー : {followingCount}({followingDelta})\nフォロワー :{followersCount}({followersDelta})\n\nでした。\n{url}';
+export const defaultTemplate = '어제의 제 Misskey 사용량을 공개합니다!\n\n노트 : {notesCount} ({notesDelta})\n팔로잉 : {followingCount} ({followingDelta})\n팔로워 : {followersCount} ({followersDelta})\n\n같이 [참여]({url})해보지 않으실래요?';
 
-/**
- * 現在のMisskeyアプリトークンバージョン。
- * ver 2:
- *   * 全権限を許可するように（将来的に使うため）
- *   * アプリ名をMisskey Toolsに
- * ver 1:
- *   * 初回バージョン
-*/
 export const currentTokenVersion = 2;
 
 export const misskeyAppInfo = {
