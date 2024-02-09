@@ -8,6 +8,7 @@ export const errorCodes = [
   'hostNotFound',
   'invalidHostFormat',
   'noNewUserAllowed',
+  'notWhitelisted',
   'other',
 ] as const;
 

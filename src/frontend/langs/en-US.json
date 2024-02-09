@@ -164,7 +164,8 @@
 		"tokenRequired": "Token is required.",
 		"invalidParameter": "Invalid parameter.",
 		"notAuthorized": "Not authorized.",
-    "noNewUserAllowed": "You cannot signup to this service for now.",
+    "noNewUserAllowed": "You cannot signup on this service for now.",
+    "notWhitelisted": "Your instance is not whitelisted.",
 		"hostNotFound": "Could not connect to the instance. Make sure that the host name is correct and the instance is live.",
 		"other": "None"
 	},

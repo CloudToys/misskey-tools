@@ -13,7 +13,8 @@
 	"admin": {
 		"username": "your_user_name",
 		"host": "your-instance-host"
-	}
+	},
+  "noNewUserAllowed": false,
   "whitelist": {
     "enabled": false,
     "instances": [
