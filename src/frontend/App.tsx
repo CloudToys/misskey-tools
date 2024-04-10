@@ -69,7 +69,7 @@ const AppInner : React.VFC = () => {
         </div>
       ) : <Router />}
       <footer className="text-center pa-5">
-        <p>Powered by LycheeBridge with ❤️</p>
+        <p>{t('poweredBy')}</p>
         <p><span dangerouslySetInnerHTML={{__html: t('disclaimerForMisskeyHq')}} /></p>
         <p>
           <a href="https://blog.gozou.moe/mktools-terms" target="_blank" rel="noreferrer noopener">

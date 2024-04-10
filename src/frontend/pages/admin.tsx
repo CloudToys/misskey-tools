@@ -8,8 +8,8 @@ import { $delete, $get, $post, $put } from '../misc/api';
 import { showModal } from '../store/slices/screen';
 import { useDispatch } from 'react-redux';
 import { useTitle } from '../hooks/useTitle';
-import {Log} from '../../common/types/log';
-import {LogView} from '../components/LogView';
+import { Log } from '../../common/types/log';
+import { LogView } from '../components/LogView';
 
 
 export const AdminPage: React.VFC = () => {

@@ -1,9 +1,9 @@
 {
 	"name": "misskey-tools",
-	"version": "3.2.0-lyc.2",
+	"version": "3.2.3+lyc",
 	"description": "",
 	"main": "built/app.js",
-	"author": "LycheeBridge",
+	"author": "CloudToys",
 	"private": true,
 	"type": "module",
 	"scripts": {

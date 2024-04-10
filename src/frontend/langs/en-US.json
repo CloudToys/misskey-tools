@@ -1,6 +1,6 @@
 {
 	"$languageName": "English",
-	"title": "Misskey Tools with LycheeBridge",
+	"title": "Misskey Tools",
 	"description1": "Make Misskey more effective! All-in-one tools with various features.",
 	"description2": "Let's input your instance URL and use Misskey Tools now!",
 	"notes": "Notes",
@@ -34,6 +34,7 @@
 	"yes": "Yes",
 	"no": "No",
 	"termsOfService": "Terms of Service",
+  "poweredBy": "Powered by SWREI Studio with ❤️",
 	"name": "Name",
 	"resetToDefault": "Reset to default",
 	"error": "Error",
