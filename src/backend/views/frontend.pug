@@ -4,21 +4,22 @@ html
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         block meta
-        - const title = t ? `${t} | Misskey Tools`: 'Misskey Tools with LycheeBridge';
-        - const desc = d || '🌠 연합우주의 모든 Misskey 사용자를 위한 다양한 도구 모음집 🚀';
+        - const title = t ? `${t} | Misskey Tools`: "Misskey Tools with LycheeBridge";
+        - const desc = d || "🌠 연합우주의 모든 Misskey 사용자를 위한 다양한 도구 모음집 🚀";
         title= title
-        meta(name='description' content=desc)
-        meta(property='og:title' content=title)
-        meta(property='og:site_name' content='Misskey Tools with LycheeBridge')
-        meta(property='og:description' content=desc)
-        meta(property='og:type' content='website')
-        meta(property='og:image' content="https://tools.phater.live/assets/misskey.png")
+        meta(name="description" content=desc)
+        meta(property="og:title" content=title)
+        meta(property="og:site_name" content="Misskey Tools with LycheeBridge")
+        meta(property="og:description" content=desc)
+        meta(property="og:type" content="website")
+        meta(property="og:image" content="https://t.psec.dev/assets/misskey.png")
         link(rel="icon", href="/assets/lcb.png", type="image/png")
         link(rel="preload", href="/assets/otadesign_rounded.woff")
         link(rel="preload", href="/assets/otadesign_rounded.woff2")
         link(rel="preload", href="/assets/PretendardJPVariable.woff2")
-        script(src='https://kit.fontawesome.com/a4464bc6cd.js' crossorigin='anonymous')
+        script(src="https://kit.fontawesome.com/a4464bc6cd.js" crossorigin="anonymous")
         link(rel="stylesheet", href="/assets/style.css")
+        script(src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous")
     body
         #app: .loading 불러오는 중입니다...
 
