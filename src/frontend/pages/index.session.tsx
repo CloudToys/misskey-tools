@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { useGetScoreQuery, useGetSessionQuery } from '../services/session';
 import { useAnnouncements } from '../hooks/useAnnouncements';
 import { Link } from 'react-router-dom';
-import { config } from '../../config.js';
 
 export const IndexSessionPage: React.VFC = () => {
   const {t} = useTranslation();
@@ -63,9 +62,9 @@ export const IndexSessionPage: React.VFC = () => {
           <h2><i className="fas fa-circle-question"></i> {t('_developerInfo.title')}</h2>
           <p>{t('_developerInfo.description')}</p>
           <div className="menu large">
-            <a className="item" href={`https://${config.admin.host}/@${config.admin.username}`} target="_blank" rel="noopener noreferrer">
+            <a className="item" href="https://psec.dev/@Pathfinder" target="_blank" rel="noopener noreferrer">
               <i className="icon fas fa-at"></i>
-              @{config.admin.username}@{config.admin.host}
+              @Pathfinder@psec.dev
             </a>
           </div>
         </section>

@@ -6,7 +6,7 @@ import { LoginForm } from '../components/LoginForm';
 import styled from 'styled-components';
 import { useSelector } from '../store';
 import { IsMobileProp } from '../misc/is-mobile-prop';
-import Twemoji from 'react-twemoji';
+import { IconMThumbsUp, IconMHeartSuit, IconMGrinningFaceWithSmilingEyes, IconMPartyPopper, IconMCustard } from 'react-fluentui-emoji/lib/modern';
 import { useAnnouncements } from '../hooks/useAnnouncements';
 
 const Hero = styled.div<IsMobileProp>`
@@ -34,9 +34,7 @@ const Hero = styled.div<IsMobileProp>`
     padding: var(--margin);
     border-radius: var(--radius);
     background: var(--black-50);
-    backdrop-filter: blur(4px) brightness(120%);
-    z-index: 1000;
-    @media screen and (max-width: 800px) {
+    backdrop-filter: blur(4px) brightness(120%);IconMCustard
       display: none;
     }
   }
@@ -100,11 +98,9 @@ export const IndexWelcomePage: React.VFC = () => {
           <div className="rect"></div>
         </div>
       </Hero>
-      <Twemoji options={{className: 'twemoji'}}>
-        <div className="py-4 text-125 text-center">
-          👍&emsp;❤&emsp;😆&emsp;🎉&emsp;🍮
-        </div>
-      </Twemoji>
+      <div className="py-4 text-125 text-center">
+        <IconMThumbsUp/>&emsp;<IconMHeartSuit/>&emsp;<IconMGrinningFaceWithSmilingEyes/>&emsp;<IconMPartyPopper/>&emsp;<IconMCustard/>
+      </div>
       <article className="xarticle vstack pa-2">
         <header>
           <h2>{t('_welcome.title')}</h2>

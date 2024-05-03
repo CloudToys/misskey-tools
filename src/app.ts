@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import axios from 'axios';
 
 import { initDb } from './backend/services/db.js';
-import {config} from './config.js';
+import { config } from './config.js';
 
 export const ua = `Mozilla/5.0 MisskeyTools +https://github.com/LycheeBridge/tools Node/${process.version} ${config.uaExtra ?? ''}`;
 
