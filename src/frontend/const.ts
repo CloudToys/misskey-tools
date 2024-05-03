@@ -12,7 +12,7 @@ export const LOCALSTORAGE_KEY_ACCENT_COLOR = 'accent_color';
 /** Misskey Tools API エンドポイント */
 export const API_ENDPOINT = `//${location.host}/api/v1/`;
 /** 更新履歴URL */
-export const CHANGELOG_URL = 'https://blog.gozou.moe/mktools-changelog';
+export const CHANGELOG_URL = 'https://ol.psec.dev/s/whats-new-tools';
 
 /** ブレークポイント モバイル */
 export const BREAKPOINT_SM = '800px';
