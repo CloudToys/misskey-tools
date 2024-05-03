@@ -99,7 +99,11 @@ export const IndexWelcomePage: React.VFC = () => {
         </div>
       </Hero>
       <div className="py-4 text-125 text-center">
-        <IconMRocket/>&emsp;<IconMBeatingHeart/>&emsp;<IconMGrinningFaceWithSmilingEyes/>&emsp;<IconMPartyPopper/>&emsp;<IconMCustard/>
+        <IconMRocket/>&emsp;
+        <IconMBeatingHeart/>&emsp;
+        <IconMGrinningFaceWithSmilingEyes/>&emsp;
+        <IconMPartyPopper/>&emsp;
+        <IconMCustard/>
       </div>
       <article className="xarticle vstack pa-2">
         <header>
