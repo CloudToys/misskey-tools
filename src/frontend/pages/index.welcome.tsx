@@ -6,7 +6,7 @@ import { LoginForm } from '../components/LoginForm';
 import styled from 'styled-components';
 import { useSelector } from '../store';
 import { IsMobileProp } from '../misc/is-mobile-prop';
-import { IconMThumbsUp, IconMHeartSuit, IconMGrinningFaceWithSmilingEyes, IconMPartyPopper, IconMCustard } from 'react-fluentui-emoji/lib/modern';
+import { IconMRocket, IconMHeartSuit, IconMGrinningFaceWithSmilingEyes, IconMPartyPopper, IconMCustard } from 'react-fluentui-emoji/lib/modern';
 import { useAnnouncements } from '../hooks/useAnnouncements';
 
 const Hero = styled.div<IsMobileProp>`
@@ -99,7 +99,7 @@ export const IndexWelcomePage: React.VFC = () => {
         </div>
       </Hero>
       <div className="py-4 text-125 text-center">
-        <IconMThumbsUp/>&emsp;<IconMHeartSuit/>&emsp;<IconMGrinningFaceWithSmilingEyes/>&emsp;<IconMPartyPopper/>&emsp;<IconMCustard/>
+        <IconMRocket/>&emsp;<IconMHeartSuit/>&emsp;<IconMGrinningFaceWithSmilingEyes/>&emsp;<IconMPartyPopper/>&emsp;<IconMCustard/>
       </div>
       <article className="xarticle vstack pa-2">
         <header>
