@@ -62,9 +62,9 @@ export const IndexSessionPage: React.VFC = () => {
           <h2><i className="fas fa-circle-question"></i> {t('_developerInfo.title')}</h2>
           <p>{t('_developerInfo.description')}</p>
           <div className="menu large">
-            <a className="item" href="https://psec.dev/@Pathfinder" target="_blank" rel="noopener noreferrer">
+            <a className="item" href="https://oscar.surf/@tools" target="_blank" rel="noopener noreferrer">
               <i className="icon fas fa-at"></i>
-              @Pathfinder@psec.dev
+              @tools@oscar.surf
             </a>
           </div>
         </section>
